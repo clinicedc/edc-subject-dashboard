@@ -1,2 +1,2 @@
-# edc-listboard
-Listboard view classes
+# edc-subject-dashboard
+
