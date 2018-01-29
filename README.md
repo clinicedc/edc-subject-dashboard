@@ -1,2 +1,3 @@
-# edc-listboard
-Listboard view classes
+# edc-subject-dashboard
+
+Subject dashboard view classes and templates
