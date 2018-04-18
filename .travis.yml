@@ -1,0 +1,24 @@
+language: python
+python:
+- 3.6
+services:
+- mysql
+branches:
+  only:
+  - develop
+install:
+- pip install --upgrade pip
+- pip install -e .
+- pip install -r requirements.txt
+- pip install flake8
+- pip install coveralls
+before_script:
+- flake8 edc_subject_dashboard
+- mysql -e 'create database edc character set utf8;'
+script:
+- coverage run --source=edc_subject_dashboard manage.py test
+after_success:
+- coveralls
+notifications:
+  slack:
+    secure: sQoeqH9Fd3d+JaLgqo/ENP31WxierkIKtV3R/B47IFfbdZxKpXuDuE2xdIXyzz1Ed6RZ3l5P/jsGbe2hexFSm79wbxZuRzTB7C8ACj6sv8C7PTsklVYCmRxyzU8/F1Bc0+w/u0lgq4bFGXOM4GRDzJu9/Rm+PX7DUJNoQs12kMgTE7XxYWmjuinHIENgJf4+dzhEdJDcbpCkbsi6WZBO2NMv2kO8dNF1KIKpTWdCr2jRhnm3Vjy23IzfEGSDTjMrcWtMSxK7Qt8pdGdHrQQpojtNgXkFE/ouJNnaaJXEuJAS6zNOPza9b4GU6ky+mi1/MGfINS5girKEG3dXkqcSKmoV6dnlYTFEzZZT+vhJUWYhwarOLOQMVPpA+ur91yICOIiWNyhUDP49X8t4o8v7S/B8SM3kn3PjURkc8cpuQa5VqmYZWtsRoVHsrn/iLvrFKa6lBq+R0t3bErliRw2RtkbGVBBrcztmGRoLxJKHwr2nQg2dF7c+/PuJQBnQ0zgTVC9us95mh4ockDKIFR4y3+TT0iWkwTA6suorSG9JEmsCJ+LkcKafZTqumfkanFVLJB5mVcQXRfIoYdgi4bWyXaxhfD4V5KRLZyerEdlHvI+7UADr6pp869ToOVHYUYxULbe23XQwo3d4/cVja6R3oUxkhG8HI64PksM1Y97IC/4=
