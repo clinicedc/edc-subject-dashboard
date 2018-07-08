@@ -3,3 +3,4 @@ git+https://github.com/erikvw/django-revision@develop#egg=django-revision
 git+https://github.com/clinicedc/edc-base@develop#egg=edc-base
 git+https://github.com/clinicedc/edc-search@develop#egg=edc-search
 git+https://github.com/clinicedc/edc-action-item@develop#egg=edc-action-item
+git+https://github.com/clinicedc/edc-model-fields@develop#egg=edc-model-fields
