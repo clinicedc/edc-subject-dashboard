@@ -8,7 +8,6 @@ dist: xenial
 
 sudo: true
 
-
 addons:
   apt_packages:
   - libcups2-dev
@@ -20,10 +19,13 @@ install:
 - pip install coveralls
 - pip install -e .
 - pip install -q -r requirements.txt
+
 before_script:
 - flake8 edc_subject_dashboard
 - mysql -e 'create database edc character set utf8;'
+
 script:
 - coverage run --source=edc_subject_dashboard manage.py test
+
 after_success:
 - coveralls
