@@ -25,6 +25,17 @@ setup(
     long_description=README,
     zip_safe=False,
     keywords='edc subject dashboard',
+    install_requires=[
+        'edc-locator',
+        'edc-registration',
+        'edc-action-item',
+        'edc-appointment',
+        'edc-consent',
+        'edc-lab',
+        'edc-metadata',
+        'edc-model-wrapper',
+        'edc-visit-schedule',
+    ],
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Django',
