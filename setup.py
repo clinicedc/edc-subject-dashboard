@@ -35,6 +35,7 @@ setup(
         'edc-lab',
         'edc-metadata',
         'edc-model-wrapper',
+        'edc-notification',
         'edc-visit-schedule',
     ],
     classifiers=[
