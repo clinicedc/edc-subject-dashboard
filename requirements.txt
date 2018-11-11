@@ -1,3 +1,4 @@
 edc-base
 edc-locator
 edc-registration
+edc-notification
