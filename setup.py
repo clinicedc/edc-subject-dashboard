@@ -41,6 +41,7 @@ setup(
         'edc-metadata',
         'edc-model-wrapper',
         'edc-notification',
+        'edc-prn',
         'edc-visit-schedule',
     ],
     classifiers=[
