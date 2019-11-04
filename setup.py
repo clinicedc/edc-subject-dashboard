@@ -32,7 +32,8 @@ setup(
     keywords='edc subject dashboard',
     install_requires=[
         'edc-locator',
-        'edc_dashboard',
+        'edc-dashboard',
+        'edc-data-manager',
         'edc-registration',
         'edc-action-item',
         'edc-appointment',
