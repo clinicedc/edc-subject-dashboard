@@ -9,11 +9,6 @@ with open(os.path.join(os.path.dirname(__file__), 'README.rst')) as readme:
 with open(os.path.join(os.path.dirname(__file__), 'VERSION')) as f:
     VERSION = f.read()
 
-tests_require = ['edc_test_utils']
-with open(os.path.join(os.path.dirname(__file__), 'requirements.txt')) as f:
-    for line in f:
-        tests_require.append(line.strip())
-
 # allow setup.py to be run from any path
 os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
@@ -29,22 +24,8 @@ setup(
     description='Subject dashboard classes for clinicedc/edc projects',
     long_description=README,
     zip_safe=False,
-    keywords='edc subject dashboard',
-    install_requires=[
-        'edc-locator',
-        'edc-dashboard',
-        'edc-data-manager',
-        'edc-registration',
-        'edc-action-item',
-        'edc-appointment',
-        'edc-consent',
-        'edc-lab',
-        'edc-metadata',
-        'edc-model-wrapper',
-        'edc-notification',
-        'edc-prn',
-        'edc-visit-schedule',
-    ],
+    keywords='django clinicedc edc subject dashboard',
+    install_requires=[],
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Django',
@@ -57,6 +38,5 @@ setup(
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
     ],
     python_requires=">=3.7",
-    tests_require=tests_require,
     test_suite='runtests.main',
 )
