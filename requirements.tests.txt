@@ -59,4 +59,3 @@ edc-utils
 edc-visit-schedule
 edc-visit-tracking
 git+https://github.com/erikvw/django-simple-history@admin_revert_permissions
-Django[argon2]==2.2.9
