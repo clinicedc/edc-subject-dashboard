@@ -1,4 +1,4 @@
-|pypi| |travis| |coverage|
+|pypi| |travis| |codecov| |downloads|
 
 
 edc-subject-dashboard
@@ -9,9 +9,12 @@ Subject dashboard view classes and templates
 
 .. |pypi| image:: https://img.shields.io/pypi/v/edc-subject-dashboard.svg
     :target: https://pypi.python.org/pypi/edc-subject-dashboard
-    
+
 .. |travis| image:: https://travis-ci.com/clinicedc/edc-subject-dashboard.svg?branch=develop
     :target: https://travis-ci.com/clinicedc/edc-subject-dashboard
-    
-.. |coverage| image:: https://coveralls.io/repos/github/clinicedc/edc-subject-dashboard/badge.svg?branch=develop
-    :target: https://coveralls.io/github/clinicedc/edc-subject-dashboard?branch=develop
+
+.. |codecov| image:: https://codecov.io/gh/clinicedc/edc-subject-dashboard/branch/develop/graph/badge.svg
+  :target: https://codecov.io/gh/clinicedc/edc-subject-dashboard
+
+.. |downloads| image:: https://pepy.tech/badge/edc-subject-dashboard
+   :target: https://pepy.tech/project/edc-subject-dashboard
