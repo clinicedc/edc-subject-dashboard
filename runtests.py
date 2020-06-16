@@ -9,7 +9,7 @@ from django.test.runner import DiscoverRunner
 from edc_test_utils import DefaultTestSettings
 from os.path import abspath, dirname
 
-app_name = 'edc_subject_dashboard'
+app_name = "edc_subject_dashboard"
 base_dir = dirname(abspath(__file__))
 
 DEFAULT_SETTINGS = DefaultTestSettings(
@@ -29,11 +29,13 @@ DEFAULT_SETTINGS = DefaultTestSettings(
         "django_crypto_fields.apps.AppConfig",
         "django_revision.apps.AppConfig",
         "simple_history",
+        "multisite",
         "edc_appointment.apps.AppConfig",
         "edc_action_item.apps.AppConfig",
         "edc_auth.apps.AppConfig",
         "edc_adverse_event.apps.AppConfig",
         "adverse_event_app.apps.AppConfig",
+        "edc_crf.apps.AppConfig",
         "edc_dashboard.apps.AppConfig",
         "edc_device.apps.AppConfig",
         "edc_data_manager.apps.AppConfig",
@@ -43,7 +45,7 @@ DEFAULT_SETTINGS = DefaultTestSettings(
         "edc_notification.apps.AppConfig",
         "edc_offstudy.apps.AppConfig",
         "edc_protocol.apps.AppConfig",
-        'edc_randomization.apps.AppConfig',
+        "edc_randomization.apps.AppConfig",
         "edc_registration.apps.AppConfig",
         "edc_timepoint.apps.AppConfig",
         "edc_identifier.apps.AppConfig",
@@ -60,8 +62,7 @@ def main():
     if not settings.configured:
         settings.configure(**DEFAULT_SETTINGS)
     django.setup()
-    failures = DiscoverRunner(failfast=True).run_tests(
-        [f'{app_name}.tests'])
+    failures = DiscoverRunner(failfast=True).run_tests([f"{app_name}.tests"])
     sys.exit(failures)
 
 
