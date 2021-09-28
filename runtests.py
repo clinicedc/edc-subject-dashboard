@@ -18,6 +18,8 @@ DEFAULT_SETTINGS = DefaultTestSettings(
     APP_NAME=app_name,
     ETC_DIR=os.path.join(base_dir, app_name, "tests", "etc"),
     SUBJECT_VISIT_MODEL="edc_subject_dashboard.subjectvisit",
+    EDC_AUTH_SKIP_SITE_AUTHS=True,
+    EDC_AUTH_SKIP_AUTH_UPDATER=True,
     INSTALLED_APPS=[
         "django.contrib.admin",
         "django.contrib.auth",
