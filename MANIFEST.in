@@ -2,5 +2,4 @@ include AUTHORS CHANGES LICENSE VERSION
 include MANIFEST.in
 include *.rst
 include *.txt
-recursive-include docs *.rst
 recursive-include edc_subject_dashboard/templates *
