@@ -6,7 +6,6 @@ edc-subject-dashboard
 
 Subject dashboard view classes and templates
 
-
 .. |pypi| image:: https://img.shields.io/pypi/v/edc-subject-dashboard.svg
     :target: https://pypi.python.org/pypi/edc-subject-dashboard
 
