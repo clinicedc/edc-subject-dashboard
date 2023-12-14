@@ -9,8 +9,8 @@ Subject dashboard view classes and templates
 .. |pypi| image:: https://img.shields.io/pypi/v/edc-subject-dashboard.svg
     :target: https://pypi.python.org/pypi/edc-subject-dashboard
 
-.. |actions| image:: https://github.com/clinicedc/edc-subject-dashboard/workflows/build/badge.svg?branch=develop
-  :target: https://github.com/clinicedc/edc-subject-dashboard/actions?query=workflow:build
+.. |actions| image:: https://github.com/clinicedc/edc-subject-dashboard/actions/workflows/build.yml/badge.svg
+  :target: https://github.com/clinicedc/edc-subject-dashboard/actions/workflows/build.yml
 
 .. |codecov| image:: https://codecov.io/gh/clinicedc/edc-subject-dashboard/branch/develop/graph/badge.svg
   :target: https://codecov.io/gh/clinicedc/edc-subject-dashboard
