@@ -3,6 +3,7 @@ import logging
 from pathlib import Path
 
 from edc_test_utils import DefaultTestSettings, func_main
+from edc_test_utils.default_installed_apps import DEFAULT_EDC_INSTALLED_APPS
 
 app_name = "edc_subject_dashboard"
 base_dir = Path(__file__).absolute().parent
@@ -18,12 +19,16 @@ project_settings = DefaultTestSettings(
     EDC_SITES_REGISTER_DEFAULT=True,
     add_dashboard_middleware=True,
     add_lab_dashboard_middleware=True,
-    excluded_apps=[
-        "edc_adverse_event.apps.AppConfig",
-        "adverse_event_app.apps.AppConfig",
-        "edc_consent.apps.AppConfig",
-        "edc_navbar.apps.AppConfig",
+    INSTALLED_APPS=[
+        *DEFAULT_EDC_INSTALLED_APPS,
+        "visit_schedule_app.apps.AppConfig",
     ],
+    # excluded_apps=[
+    #     "edc_adverse_event.apps.AppConfig",
+    #     "adverse_event_app.apps.AppConfig",
+    #     "edc_consent.apps.AppConfig",
+    #     "edc_navbar.apps.AppConfig",
+    # ],
 ).settings
 
 
