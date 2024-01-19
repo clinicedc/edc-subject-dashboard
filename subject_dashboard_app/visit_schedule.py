@@ -1,8 +1,16 @@
 from dateutil.relativedelta import relativedelta
 from edc_visit_schedule.schedule import Schedule
 from edc_visit_schedule.tests.dummy_panel import DummyPanel
-from edc_visit_schedule.visit import Crf, FormsCollection, Requisition, Visit
+from edc_visit_schedule.visit import (
+    Crf,
+    CrfCollection,
+    Requisition,
+    RequisitionCollection,
+    Visit,
+)
 from edc_visit_schedule.visit_schedule import VisitSchedule
+
+from subject_dashboard_app.consents import v1_consent
 
 
 class Panel(DummyPanel):
@@ -12,19 +20,19 @@ class Panel(DummyPanel):
 
     def __init__(self, name):
         super().__init__(
-            requisition_model="edc_subject_dashboard.subjectrequisition", name=name
+            requisition_model="subject_dashboard_app.subjectrequisition", name=name
         )
 
 
-crfs = FormsCollection(
-    Crf(show_order=1, model="edc_subject_dashboard.crfone", required=True),
-    Crf(show_order=2, model="edc_subject_dashboard.crftwo", required=True),
-    Crf(show_order=3, model="edc_subject_dashboard.crfthree", required=True),
-    Crf(show_order=4, model="edc_subject_dashboard.crffour", required=True),
-    Crf(show_order=5, model="edc_subject_dashboard.crffive", required=True),
+crfs = CrfCollection(
+    Crf(show_order=1, model="subject_dashboard_app.crfone", required=True),
+    Crf(show_order=2, model="subject_dashboard_app.crftwo", required=True),
+    Crf(show_order=3, model="subject_dashboard_app.crfthree", required=True),
+    Crf(show_order=4, model="subject_dashboard_app.crffour", required=True),
+    Crf(show_order=5, model="subject_dashboard_app.crffive", required=True),
 )
 
-requisitions = FormsCollection(
+requisitions = RequisitionCollection(
     Requisition(show_order=10, panel=Panel("one"), required=True, additional=False),
     Requisition(show_order=20, panel=Panel("two"), required=True, additional=False),
     Requisition(show_order=30, panel=Panel("three"), required=True, additional=False),
@@ -43,15 +51,15 @@ visit_schedule1 = VisitSchedule(
 visit_schedule2 = VisitSchedule(
     name="visit_schedule2",
     offstudy_model="edc_offstudy.subjectoffstudy",
-    death_report_model="edc_visit_tracking.deathreport",
+    death_report_model="edc_adverse_event.deathreport",
     locator_model="edc_locator.subjectlocator",
 )
 
 schedule1 = Schedule(
     name="schedule1",
-    onschedule_model="edc_subject_dashboard.onscheduleone",
-    offschedule_model="edc_subject_dashboard.offscheduleone",
-    consent_model="edc_visit_tracking.subjectconsent",
+    onschedule_model="subject_dashboard_app.onschedule",
+    offschedule_model="subject_dashboard_app.offschedule",
+    consent_definitions=[v1_consent],
     appointment_model="edc_appointment.appointment",
 )
 
@@ -77,9 +85,9 @@ for visit in visits:
 
 schedule2 = Schedule(
     name="schedule2",
-    onschedule_model="edc_subject_dashboard.onscheduletwo",
-    offschedule_model="edc_subject_dashboard.offscheduletwo",
-    consent_model="edc_visit_tracking.subjectconsent",
+    onschedule_model="subject_dashboard_app.onscheduletwo",
+    offschedule_model="subject_dashboard_app.offscheduletwo",
+    consent_definitions=[v1_consent],
     appointment_model="edc_appointment.appointment",
     base_timepoint=4,
 )
