@@ -10,7 +10,7 @@ from edc_visit_schedule.visit import (
 )
 from edc_visit_schedule.visit_schedule import VisitSchedule
 
-from subject_dashboard_app.consents import v1_consent
+from subject_dashboard_app.consents import consent_v1
 
 
 class Panel(DummyPanel):
@@ -59,7 +59,7 @@ schedule1 = Schedule(
     name="schedule1",
     onschedule_model="subject_dashboard_app.onschedule",
     offschedule_model="subject_dashboard_app.offschedule",
-    consent_definitions=[v1_consent],
+    consent_definitions=[consent_v1],
     appointment_model="edc_appointment.appointment",
 )
 
@@ -87,7 +87,7 @@ schedule2 = Schedule(
     name="schedule2",
     onschedule_model="subject_dashboard_app.onscheduletwo",
     offschedule_model="subject_dashboard_app.offscheduletwo",
-    consent_definitions=[v1_consent],
+    consent_definitions=[consent_v1],
     appointment_model="edc_appointment.appointment",
     base_timepoint=4,
 )
