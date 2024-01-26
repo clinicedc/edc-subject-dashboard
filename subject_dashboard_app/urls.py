@@ -1,7 +1,7 @@
 from django.urls import include, path, re_path
 from django.views.generic import RedirectView
 from edc_dashboard.views import AdministrationView
-from edc_protocol import Protocol
+from edc_protocol.research_protocol_config import ResearchProtocolConfig
 from edc_utils import paths_for_urlpatterns
 
 from edc_subject_dashboard.views import SubjectDashboardView as BaseSubjectDashboardView
@@ -37,7 +37,7 @@ urlpatterns = [
     *SubjectDashboardView.urls(
         # namespace="subject_dashboard_app",
         label="subject_dashboard",
-        identifier_pattern=Protocol().subject_identifier_pattern,
+        identifier_pattern=ResearchProtocolConfig().subject_identifier_pattern,
     ),
     path("i18n/", include("django.conf.urls.i18n")),
     re_path(".", RedirectView.as_view(url="/"), name="home_url"),
