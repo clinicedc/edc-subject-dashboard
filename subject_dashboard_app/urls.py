@@ -2,7 +2,7 @@ from django.urls import include, path, re_path
 from django.views.generic import RedirectView
 from edc_dashboard.views import AdministrationView
 from edc_protocol.research_protocol_config import ResearchProtocolConfig
-from edc_utils import paths_for_urlpatterns
+from edc_utils.paths_for_urlpatterns import paths_for_urlpatterns
 
 from edc_subject_dashboard.views import SubjectDashboardView as BaseSubjectDashboardView
 
